@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comments = @post.comments.all
+    #@comments = @post.comments.includes(:user)
     @view_comments = params[:view_comments].present? ? params[:view_comments].to_i : 0
     #@comment = @post.comment
     @commentable = @post 
